@@ -10,6 +10,8 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+	// MARK: - Properties
+
 	var searchController: UISearchController = {
 		let resultsViewController = ResultsViewController()
 		let viewController = UISearchController(searchResultsController: resultsViewController)
@@ -17,7 +19,10 @@ class RootViewController: UIViewController {
 		viewController.searchResultsUpdater = resultsViewController
 		return viewController
 	}()
-	
+
+
+	// MARK: - Initializers
+
 	convenience init() {
 		self.init(nibName: nil, bundle: nil)
 	}
@@ -27,6 +32,9 @@ class RootViewController: UIViewController {
 		
 		definesPresentationContext = true
     }
+
+
+	// MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()

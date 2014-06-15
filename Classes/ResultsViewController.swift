@@ -9,13 +9,18 @@
 import UIKit
 
 class ResultsViewController: UITableViewController {
-	
+
+	// MARK: - Properties
+
 	var results: String[] = []
 
 	convenience init() {
 		self.init(style: .Plain)
 	}
-	
+
+
+	// MARK: - Initializers
+
     init(style: UITableViewStyle) {
         super.init(style: style)
     }
@@ -23,12 +28,18 @@ class ResultsViewController: UITableViewController {
 	init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 	}
+
+
+	// MARK: - UIViewController
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
+
+
+	// MARK: - UITableViewDataSource
 	
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         return countElements(results)
