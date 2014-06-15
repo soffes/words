@@ -1,6 +1,6 @@
 # Words
 
-Simple Thesaurus built with [Mody data](https://github.com/zeke/moby).
+Simple Thesaurus built with [Moby data](https://github.com/zeke/moby).
 
 ## Building
 
