@@ -8,9 +8,9 @@
 
 struct Result {
 	var word: String
-	var synonyms: String[]
+	var synonyms: [String]
 	
-	init(word: String, synonyms: String[]) {
+	init(word: String, synonyms: [String]) {
 		self.word = word
 		self.synonyms = synonyms
 	}

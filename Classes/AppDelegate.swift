@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	// MARK: - Properties
 
-	@lazy var window: UIWindow = {
+	lazy var window: UIWindow = {
 		let win = UIWindow(frame: UIScreen.mainScreen().bounds)
 		win.backgroundColor = UIColor.whiteColor()
 		win.rootViewController = UINavigationController(rootViewController: RootViewController())

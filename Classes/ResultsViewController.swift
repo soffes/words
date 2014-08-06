@@ -12,21 +12,26 @@ class ResultsViewController: UITableViewController {
 
 	// MARK: - Properties
 
-	var results: String[] = []
-
-	convenience init() {
-		self.init(style: .Plain)
-	}
+	var results: [String] = []
 
 
 	// MARK: - Initializers
+	
+	convenience override init() {
+		self.init(style: .Plain)
+	}
 
-    init(style: UITableViewStyle) {
+    override init(style: UITableViewStyle) {
         super.init(style: style)
     }
 	
-	init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+	
+	override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+	}
+	
+	required init(coder aDecoder: NSCoder!) {
+		super.init(coder: aDecoder)
 	}
 
 

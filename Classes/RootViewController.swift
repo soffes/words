@@ -23,15 +23,19 @@ class RootViewController: UIViewController {
 
 	// MARK: - Initializers
 
-	convenience init() {
+	convenience override init() {
 		self.init(nibName: nil, bundle: nil)
 	}
 	
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 		
 		definesPresentationContext = true
     }
+	
+	required init(coder aDecoder: NSCoder!) {
+		super.init(coder: aDecoder)
+	}
 
 
 	// MARK: - UIViewController
