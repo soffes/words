@@ -17,21 +17,8 @@ class ResultsViewController: UITableViewController {
 
 	// MARK: - Initializers
 	
-	convenience override init() {
+	convenience init() {
 		self.init(style: .Plain)
-	}
-
-    override init(style: UITableViewStyle) {
-        super.init(style: style)
-    }
-	
-	
-	override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	}
-	
-	required init(coder aDecoder: NSCoder!) {
-		super.init(coder: aDecoder)
 	}
 
 
@@ -47,21 +34,20 @@ class ResultsViewController: UITableViewController {
 	// MARK: - UITableViewDataSource
 	
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
-        return countElements(results)
+        return results.count
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = results[indexPath.row]
+        cell.textLabel?.text = results[indexPath.row]
         return cell
     }
 }
 
 
 extension ResultsViewController: UISearchResultsUpdating {
-	func updateSearchResultsForSearchController(searchController: UISearchController!) {
-		let text = searchController.searchBar.text
-		if let result = Thesaurus.defaultThesaurus().resultForQuery(text) {
+	func updateSearchResultsForSearchController(searchController: UISearchController) {
+		if let text = searchController.searchBar.text, result = Thesaurus.defaultThesaurus().resultForQuery(text) {
 			results = result.synonyms
 		} else {
 			results = []

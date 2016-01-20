@@ -8,23 +8,22 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@UIApplicationMain final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	// MARK: - Properties
 
-	lazy var window: UIWindow = {
-		let win = UIWindow(frame: UIScreen.mainScreen().bounds)
-		win.backgroundColor = UIColor.whiteColor()
-		win.rootViewController = UINavigationController(rootViewController: RootViewController())
-		return win
+	var window: UIWindow? = {
+		let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+		window.backgroundColor = UIColor.whiteColor()
+		window.rootViewController = UINavigationController(rootViewController: RootViewController())
+		return window
 	}()
 
 
 	// MARK: - UIApplicationDelegate
 	
-	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-		window.makeKeyAndVisible()
+	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+		window?.makeKeyAndVisible()
 		return true
 	}
 }

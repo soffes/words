@@ -23,18 +23,8 @@ class RootViewController: UIViewController {
 
 	// MARK: - Initializers
 
-	convenience override init() {
+	convenience init() {
 		self.init(nibName: nil, bundle: nil)
-	}
-	
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-		
-		definesPresentationContext = true
-    }
-	
-	required init(coder aDecoder: NSCoder!) {
-		super.init(coder: aDecoder)
 	}
 
 
@@ -42,7 +32,8 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+
+		definesPresentationContext = true
 		navigationItem.titleView = searchController.searchBar
     }
 }
