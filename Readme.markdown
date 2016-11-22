@@ -2,6 +2,8 @@
 
 Simple Thesaurus built with [Moby data](https://github.com/zeke/moby).
 
+<img src=http://i.imgur.com/84QPJ8v.png width=250>
+
 ## Building
 
 You'll need [CocoaPods](http://cocoapods.org) to build the app. To install CocoaPods, run the following command in Terminal:
